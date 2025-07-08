@@ -1,57 +1,59 @@
-[
-  {
-    "id": 1,
-    "name": "Viktor Axelsen",
-    "country": "Denmark",
-    "ranking": 1,
-    "events": ["Men's Singles"],
-    "birthdate": "1994-01-04",
-    "points": 98765,
-    "height_cm": 194,
-    "handedness": "Right"
-  },
-  {
-    "id": 2,
-    "name": "Shi Yuqi",
-    "country": "China",
-    "ranking": 2,
-    "events": ["Men's Singles"],
-    "birthdate": "1996-02-28",
-    "points": 94500,
-    "height_cm": 183,
-    "handedness": "Right"
-  },
-  {
-    "id": 3,
-    "name": "Kunlavut Vitidsarn",
-    "country": "Thailand",
-    "ranking": 3,
-    "events": ["Men's Singles"],
-    "birthdate": "2001-05-11",
-    "points": 91000,
-    "height_cm": 177,
-    "handedness": "Right"
-  },
-  {
-    "id": 4,
-    "name": "An Se-young",
-    "country": "South Korea",
-    "ranking": 1,
-    "events": ["Women's Singles"],
-    "birthdate": "2002-02-05",
-    "points": 100120,
-    "height_cm": 170,
-    "handedness": "Right"
-  },
-  {
-    "id": 5,
-    "name": "Akane Yamaguchi",
-    "country": "Japan",
-    "ranking": 2,
-    "events": ["Women's Singles"],
-    "birthdate": "1997-06-06",
-    "points": 97345,
-    "height_cm": 156,
-    "handedness": "Right"
-  }
-]
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "Viktor Axelsen",
+      "country": "Denmark",
+      "ranking": 1,
+      "events": ["Men's Singles"],
+      "birthdate": "1994-01-04",
+      "points": 98765,
+      "height_cm": 194,
+      "handedness": "Right"
+    },
+    {
+      "id": 2,
+      "name": "Shi Yuqi",
+      "country": "China",
+      "ranking": 2,
+      "events": ["Men's Singles"],
+      "birthdate": "1996-02-28",
+      "points": 94500,
+      "height_cm": 183,
+      "handedness": "Right"
+    },
+    {
+      "id": 3,
+      "name": "Kunlavut Vitidsarn",
+      "country": "Thailand",
+      "ranking": 3,
+      "events": ["Men's Singles"],
+      "birthdate": "2001-05-11",
+      "points": 91000,
+      "height_cm": 177,
+      "handedness": "Right"
+    },
+    {
+      "id": 4,
+      "name": "An Se-young",
+      "country": "South Korea",
+      "ranking": 1,
+      "events": ["Women's Singles"],
+      "birthdate": "2002-02-05",
+      "points": 100120,
+      "height_cm": 170,
+      "handedness": "Right"
+    },
+    {
+      "id": 5,
+      "name": "Akane Yamaguchi",
+      "country": "Japan",
+      "ranking": 2,
+      "events": ["Women's Singles"],
+      "birthdate": "1997-06-06",
+      "points": 97345,
+      "height_cm": 156,
+      "handedness": "Right"
+    }
+  ]
+}
