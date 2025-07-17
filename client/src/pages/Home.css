@@ -1,0 +1,142 @@
+h1 {
+    font-family: 'header', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 5.5em;
+}
+
+h2 {
+    font-family: 'header', sans-serif;
+    color: white;
+    font-size: 2em;
+}
+
+h3 {
+    font-family: 'header', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+p {
+    font-family: 'header', sans-serif;
+    color:white;
+    font-size: 2em;
+}
+
+/* Block styles */
+.block-with-bg-img-1 {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../assets/images/court.jpg'); /* add the linear gradient on top of the image */
+    background-size: cover; /* scale the image to cover the entire block */
+    background-position: center; /* center the image within the block */
+    min-height: 650px; /* set the height of the block */
+    height: auto;
+    position: relative; /* allows the text overlay to be positioned absolutely */
+    border-bottom-left-radius: 30px; 
+    border-bottom-right-radius: 30px; 
+}
+
+.block-with-bg-img-2 {
+    display: flex;
+    background-color: white; /* add the linear gradient on top of the image */
+    background-size: cover; /* scale the image to cover the entire block */
+    background-position: center; /* center the image within the block */
+    min-height: 600px; /* set the height of the block */
+    height: auto;
+    position: relative; /* allows the text overlay to be positioned absolutely */
+}
+
+.block-with-bg-img-1 .border-bottom {
+    position: absolute;
+    bottom: 0; /* position the border at the bottom of the block */
+    left: 0; /* align the border with the left edge of the block */
+    width: 100%; /* make the border span the entire width of the block */
+    height: 20px; /* set the height of the border */
+    background-color: #000; /* set the color of the border */
+}
+
+.block-with-bg-img-2 .border-bottom {
+    position: absolute;
+    bottom: 0; /* position the border at the bottom of the block */
+    left: 0; /* align the border with the left edge of the block */
+    width: 100%; /* make the border span the entire width of the block */
+    height: 20px; /* set the height of the border */
+    background-color: #000; /* set the color of the border */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 40%; /* center vertically */
+    padding: 0 200px;
+    transform: translateY(-50%); 
+    color: #fff;
+}
+
+.cta-btn {
+    display: inline-block;
+    color: #fff; /* button text color */
+    background-color: #000; /* button background color */
+    padding: 10px 20px; /* button padding */
+    border-radius: 5px; /* button border radius */
+    text-decoration: none; /* remove underline from link */
+    margin-top: 20px; /* add margin above the button */
+}
+
+#home {
+    background-color: #f0f0f0;
+}
+
+.cell {
+    padding-left: 20px;
+    background-color: #f0f0f0;
+    width: 160px;
+    box-shadow: -5px 4px 6px rgba(0, 0, 0, 0.3); /* Adds shadow behind the header */
+}
+
+.btn {
+    border: 1px solid white;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+/* Horizontal Scroll Section */
+.scroll-container {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px; 
+    scroll-snap-type: x mandatory;
+    height: 550px;
+}
+
+.scroll-wrapper {
+    padding: 0 300px; /* Align the scroll area with the header's padding */
+}
+
+.tournament {
+    flex: 0 0 auto; /* Prevent flexbox from shrinking items */
+    width: 300px; /* Width of each tournament card */
+    scroll-snap-align: start;
+}
+
+.tournament img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tournament p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/*Search Bar*/
+.search-bar-container{
+    position: absolute;
+    margin: auto;
+    min-width: 200px;
+    color: #fff;
+    top: 70%; /* center vertically */
+    padding: 0 200px;
+    color: #fff;
+}

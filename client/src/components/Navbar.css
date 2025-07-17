@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'header';
+    src: url('../assets/fonts/JosefinSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'normal'; /* name of the font */
+    src: url('../assets/fonts/Lato-Regular.ttf') format('truetype'); /* path to the font file and format */
+}
+
+@font-face {
+    font-family: 'light'; /* name of the font */
+    src: url('../assets/fonts/JosefinSans-Light.ttf') format('truetype'); /* path to the font file and format */
+}
+
+.cell {
+    background-color: #f0f0f0;
+    box-shadow: -5px 4px 6px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    background-color: rgba(223,32,39);
+    position: fixed; /* fixed position */
+    top: 0; /* stick to the top of the screen */
+    left: 0; /* stick to the left of the screen */
+    width: 100%; /* take up the full width of the screen */
+    height: auto;
+    z-index: 1; /* ensures the header stays on top of other elements */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Adds shadow behind the header */
+    padding: 0 200px; /* Padding of 300px left and right */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logo-link{
+    font-family: 'header', sans-serif;
+    color: white;
+    font-size: 1em;
+}
+
+.nav-link {
+    font-family: 'header', sans-serif;
+    padding: 33px;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-link.split {
+    float: right;
+    background-color: white;
+    color: rgba(223,32,39);
+    font-weight: bolder;
+}
+
+.nav-link:hover {
+    border-bottom: 3px solid white;
+}
+
+.nav-link.active {
+    border-bottom: 3px solid white;
+}
