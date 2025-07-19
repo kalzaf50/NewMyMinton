@@ -25,11 +25,11 @@ const Home = () => {
         <h1 style={{ textAlign:'left' }}>WHERE CHAMPIONS MEET</h1>
         <p style={{ textAlign:'left' }}>Book your court, join events, and track player stats!</p>
       </div>
-      {/* <div className='search-bar-container'>
+      <div className='search-bar-container'>
         <div>Tempah Lokasi</div>
         <PlaceSearchBox setResults={setResults} />
         {results && results.length > 0 && <PlaceSearchList results={results} />}
-      </div> */}
+      </div>
     </section>
 
     <div className="container">

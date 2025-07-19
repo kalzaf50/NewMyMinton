@@ -9,3 +9,4 @@ const playerSchema = new mongoose.Schema({
 }, { collection: 'Players' });
 
 module.exports = mongoose.model('Players', playerSchema);
+

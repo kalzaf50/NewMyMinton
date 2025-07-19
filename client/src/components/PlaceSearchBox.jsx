@@ -2,16 +2,16 @@
 import React, { useState } from "react";
 import './PlaceSearchBox.css';
 
-export const PlaceSearchBox = ({ setResults }) => {
+export const PlaceSearchBox = ({ setResults, endpoint }) => {
     const[input, setInput] = useState("")
 
     const fetchData = (value) => {
-    fetch(`https://my-json-server.typicode.com/kalzaf50/NewMyMinton/players?name_like=${value}`)
-      .then((response) => response.json())
-      .then((json) => {
-        setResults(json);
-      });
-  };
+      fetch(`${process.env.REACT_APP_API_PLAYER_URL}?name=${value}`)
+        .then((response) => response.json())
+        .then((json) => {
+          setResults(json);
+        });
+    };
 
     const handleChange = (value) => {
         setInput(value);

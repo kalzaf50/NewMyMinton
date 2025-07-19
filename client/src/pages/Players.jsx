@@ -17,11 +17,11 @@ const Players = () => {
     points: '',
   });
 
-  // Fetch players from backend (somehting)
+  // Fetch players from backend
   const fetchPlayers = async () => {
     try {
       setLoading(true);
-      const res = await fetch('http://localhost:5000/players');
+      const res = await fetch(process.env.REACT_APP_API_PLAYER_URL);
       const data = await res.json();
       setPlayers(data);
     } catch (error) {
@@ -34,7 +34,7 @@ const Players = () => {
   // Delete player
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/players/${id}`, { method: 'DELETE' });
+      await fetch(`${process.env.REACT_APP_API_PLAYER_URL}/${id}`, { method: 'DELETE' });
       fetchPlayers();
     } catch (error) {
       console.error('Failed to delete player:', error);
@@ -68,14 +68,14 @@ const Players = () => {
 
       if (!rowToEdit) {
         // POST for new player
-        await fetch('http://localhost:5000/players', {
+        await fetch(process.env.REACT_APP_API_PLAYER_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formattedPlayer),
         });
       } else {
         // PUT for updating existing player
-        await fetch(`http://localhost:5000/players/${rowToEdit}`, {
+        await fetch(`${process.env.REACT_APP_API_PLAYER_URL}/${rowToEdit}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formattedPlayer),
@@ -110,7 +110,7 @@ const Players = () => {
       <div className="players-container">
         <h2 className="rankings-title">RANKINGS</h2>
 
-        <PlaceSearchBox setResults={setPlayers} />
+        <PlaceSearchBox setResults={setPlayers}/>
 
         {loading ? (
           <p>Loading players...</p>
