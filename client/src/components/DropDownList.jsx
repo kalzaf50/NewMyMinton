@@ -14,7 +14,7 @@ export const DropDownList = ({ endpoint, selected, setSelected }) => {
         const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/${endpoint}`);
         if (!response.ok) throw new Error("Failed to fetch");
         const data = await response.json();
-        setResults(data); // adjust this if API response structure is different
+        setResults(data); 
       } catch (error) {
         console.error("Error fetching places:", error);
       }

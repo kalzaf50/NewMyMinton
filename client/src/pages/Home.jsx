@@ -25,7 +25,7 @@ const Home = () => {
       </div>
       <div className='search-bar-container'>
         <DropDownList
-          endpoint="places" // Replace with your real API URL
+          endpoint="places" 
           selected={selectedPlace}
           setSelected={setSelectedPlace}
         />
