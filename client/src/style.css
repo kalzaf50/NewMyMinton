@@ -5,12 +5,12 @@
 
 @font-face {
     font-family: 'normal'; /* name of the font */
-    src: url('./assets/fonts/Lato-Regular.ttf') format('truetype'); /* path to the font file and format */
+    src: url('./assets/fonts/Roboto-Regular.ttf') format('truetype'); /* path to the font file and format */
 }
 
 @font-face {
     font-family: 'light'; /* name of the font */
-    src: url('./assets/fonts/JosefinSans-Light.ttf') format('truetype'); /* path to the font file and format */
+    src: url('./assets/fonts/Roboto-Medium.ttf') format('truetype'); /* path to the font file and format */
 }
 
 /* Example usage of the fonts in different elements */

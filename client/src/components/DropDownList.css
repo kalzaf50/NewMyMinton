@@ -1,0 +1,78 @@
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    width: 100%;
+    font-family: 'normal', sans-serif;
+    user-select: none;
+}
+
+/* Header */
+.dropdown-header {
+    width: 250px;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.789);
+    box-shadow: 0px 0px 8px #7b0202;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Hover effect for header */
+.dropdown-header:hover {
+    background-color: #f9f9f9;
+}
+
+/* Dropdown list container */
+.dropdown-list {
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px #ddd;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+/* Each list item */
+.dropdown-list-item {
+    text-transform: uppercase;
+    font-family: 'normal', sans-serif;
+    padding: 10px 0px;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.789);
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    list-style: none;
+    margin: 0;
+}
+
+/* Remove border on last item */
+.dropdown-list-item:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.dropdown-list-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Scrollbar styling */
+.dropdown-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-list::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.dropdown-list::-webkit-scrollbar-track {
+    background-color: #fff;
+}

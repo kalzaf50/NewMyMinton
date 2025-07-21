@@ -43,7 +43,7 @@
 .rankings-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: 'header', sans-serif;
+  font-family: 'normal', sans-serif;
 }
 
 .rankings-table thead {

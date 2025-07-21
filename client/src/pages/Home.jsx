@@ -5,9 +5,7 @@ import { useState } from "react";
 import './Home.css';
 
 /*Components*/
-import { PlaceSearchBox } from '../components/PlaceSearchBox';
-import { PlaceSearchList } from '../components/PlaceSearchList';
-import Button from 'react-bootstrap/Button';
+import { DropDownList } from '../components/DropDownList';
 
 /*Images*/
 import tourny1 from '../assets/images/tourny1.jpeg';
@@ -16,7 +14,7 @@ import tourny3 from '../assets/images/tourny3.jpg';
 import tourny4 from '../assets/images/tourny5.jpg';
 
 const Home = () => {
-  const [results, setResults] = useState([]);
+  const [selectedPlace, setSelectedPlace] = useState(null);
 
   return (
     <>
@@ -26,9 +24,11 @@ const Home = () => {
         <p style={{ textAlign:'left' }}>Book your court, join events, and track player stats!</p>
       </div>
       <div className='search-bar-container'>
-        <div>Tempah Lokasi</div>
-        <PlaceSearchBox setResults={setResults} />
-        {results && results.length > 0 && <PlaceSearchList results={results} />}
+        <DropDownList
+          endpoint="places" // Replace with your real API URL
+          selected={selectedPlace}
+          setSelected={setSelectedPlace}
+        />
       </div>
     </section>
 

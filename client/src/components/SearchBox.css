@@ -15,10 +15,10 @@
 
 input {
     background-color: transparent;
-    font-family: 'header', sans-serif;
+    font-family: 'normal', sans-serif;
     border: none;
     height: 100%;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 input:focus{

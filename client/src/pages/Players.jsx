@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Players.css';
-import { PlaceSearchBox } from '../components/PlaceSearchBox';
+import { SearchBox } from '../components/SearchBox';
 
 const Players = () => {
 
@@ -58,12 +58,7 @@ const Players = () => {
   const handleSubmitPlayer = async () => {
     try {
       const formattedPlayer = {
-        ...newPlayer,
-        events: [newPlayer.events],
-        points: parseInt(newPlayer.points),
-        ranking: parseInt(newPlayer.ranking),
-        height_cm: parseInt(newPlayer.height_cm),
-        birthdate: new Date(newPlayer.birthdate),
+        ...newPlayer
       };
 
       if (!rowToEdit) {
@@ -110,7 +105,7 @@ const Players = () => {
       <div className="players-container">
         <h2 className="rankings-title">RANKINGS</h2>
 
-        <PlaceSearchBox setResults={setPlayers}/>
+        <SearchBox setResults={setPlayers} endpoint="players"/>
 
         {loading ? (
           <p>Loading players...</p>

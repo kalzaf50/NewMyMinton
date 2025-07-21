@@ -16,13 +16,14 @@ h3 {
 }
 
 p {
-    font-family: 'header', sans-serif;
+    font-family: 'light', sans-serif;
     color:white;
     font-size: 2em;
 }
 
 /* Block styles */
 .block-with-bg-img-1 {
+    display: flex;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../assets/images/court.jpg'); /* add the linear gradient on top of the image */
     background-size: cover; /* scale the image to cover the entire block */
     background-position: center; /* center the image within the block */
@@ -63,20 +64,9 @@ p {
 
 .text-overlay {
     position: absolute;
-    top: 40%; /* center vertically */
+    top: 20%; /* center vertically */
     padding: 0 200px;
-    transform: translateY(-50%); 
     color: #fff;
-}
-
-.cta-btn {
-    display: inline-block;
-    color: #fff; /* button text color */
-    background-color: #000; /* button background color */
-    padding: 10px 20px; /* button padding */
-    border-radius: 5px; /* button border radius */
-    text-decoration: none; /* remove underline from link */
-    margin-top: 20px; /* add margin above the button */
 }
 
 #home {
@@ -88,14 +78,6 @@ p {
     background-color: #f0f0f0;
     width: 160px;
     box-shadow: -5px 4px 6px rgba(0, 0, 0, 0.3); /* Adds shadow behind the header */
-}
-
-.btn {
-    border: 1px solid white;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    margin-top: 20px;
 }
 
 /* Horizontal Scroll Section */
@@ -136,7 +118,7 @@ p {
     margin: auto;
     min-width: 200px;
     color: #fff;
-    top: 70%; /* center vertically */
+    top: 80%; /* center vertically */
     padding: 0 200px;
     color: #fff;
 }
