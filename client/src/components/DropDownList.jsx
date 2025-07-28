@@ -46,7 +46,7 @@ export const DropDownList = ({ endpoint, selected, setSelected }) => {
         className="dropdown-header"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <span>{selected ? selected : "Select a place"}</span>
+        <span>{selected ? selected.toUpperCase() : "Select a place"}</span>
         <span>▼</span>
       </div>
 

@@ -3,14 +3,14 @@ import './Booking.css';
 import { DropDownList } from '../components/DropDownList';
 
 const Booking = () => {
-  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [selectedPlace, setSelectedPlace] = useState('');
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchPlaces = async () => {
     try {
       setLoading(true);
-      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/places`);
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/areas`);
       const data = await res.json();
       setPlaces(data);
     } catch (error) {
@@ -29,18 +29,24 @@ const Booking = () => {
   return (
     <div className="booking-container">
       <h2 className="booking-title">BOOKING</h2>
+
       <div className="booking-list">
         <DropDownList
-          endpoint="places" 
+          endpoint="areas"
           selected={selectedPlace}
           setSelected={setSelectedPlace}
         />
       </div>
 
       <div className="courts-list">
-        {currentPlace && currentPlace.courts && currentPlace.courts.map((court, idx) => (
-          <div key={idx} className="court-item">
-            {court}
+        {loading && <p>Loading courts...</p>}
+        {!loading && currentPlace?.courts?.length === 0 && <p>No courts available.</p>}
+        
+        {!loading && currentPlace?.courts?.map((court, idx) => (
+          <div key={court._id || idx} className="court-item">
+            <h3>{court.name}</h3>
+            <p><strong>Location:</strong> {court.location}</p>
+            <p><strong>Contact:</strong> {court.contact || 'N/A'}</p>
           </div>
         ))}
       </div>

@@ -49,5 +49,18 @@
   border-radius: 8px;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
   font-family: 'header', sans-serif;
-  font-size: 1.2em;
+}
+
+.court-item h3{
+  color: black;
+}
+
+.court-item p {
+  font-family: 'regular', sans-serif;
+  color: black;
+  font-size: 1em;
+}
+
+.booking-container .courts-list .court-item {
+  color: black !important;
 }

@@ -126,7 +126,7 @@ const Players = () => {
                 {players.map((player) => (
                   <tr key={player._id}>
                     <td>{player.ranking}</td>
-                    <td>{player.name}</td>
+                    <td>{player.name?.toUpperCase()}</td>
                     <td>{player.country}</td>
                     <td>{player.events?.[0] || '-'}</td>
                     <td>{player.points?.toLocaleString()}</td>

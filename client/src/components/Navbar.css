@@ -14,7 +14,7 @@
 }
 
 .cell {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0 !important;
     box-shadow: -5px 4px 6px rgba(0, 0, 0, 0.3);
     height: 100%;
     display: flex;

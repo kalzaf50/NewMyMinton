@@ -25,7 +25,7 @@ const Home = () => {
       </div>
       <div className='search-bar-container'>
         <DropDownList
-          endpoint="places" 
+          endpoint="areas" 
           selected={selectedPlace}
           setSelected={setSelectedPlace}
         />

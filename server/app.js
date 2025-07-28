@@ -11,7 +11,7 @@ const cors = require('cors'); // Enables Cross-Origin Resource Sharing
 // Import Routes
 const indexRouter = require('./routes/index');
 const playersRouter = require('./routes/players');
-const placesRouter = require('./routes/places');
+const areasRouter = require('./routes/areas');
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.use(cors()); // Enables cross-origin requests (important for React frontend)
 // API Routes
 app.use('/', indexRouter);
 app.use('/players', playersRouter);
-app.use('/places', placesRouter);
+app.use('/areas', areasRouter);
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
