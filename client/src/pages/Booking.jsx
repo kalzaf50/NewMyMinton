@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Booking.css';
 import { DropDownList } from '../components/DropDownList';
+import { useParams } from 'react-router-dom';
 
 const Booking = () => {
-  const [selectedPlace, setSelectedPlace] = useState('');
+  const { area } = useParams();
+  const [selectedPlace, setSelectedPlace] = useState(decodeURIComponent(area));
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
 

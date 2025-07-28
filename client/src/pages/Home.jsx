@@ -1,5 +1,6 @@
 /*Libraries*/
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 /*Styles*/
 import './Home.css';
@@ -15,6 +16,13 @@ import tourny4 from '../assets/images/tourny5.jpg';
 
 const Home = () => {
   const [selectedPlace, setSelectedPlace] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (selectedPlace) {
+      navigate(`/booking/${encodeURIComponent(selectedPlace)}`); // Redirect to booking page
+    }
+  }, [selectedPlace, navigate]);
 
   return (
     <>
