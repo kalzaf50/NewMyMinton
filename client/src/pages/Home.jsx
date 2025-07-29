@@ -20,7 +20,7 @@ const Home = () => {
 
   useEffect(() => {
     if (selectedPlace) {
-      navigate(`/booking/${encodeURIComponent(selectedPlace)}`); // Redirect to booking page
+      navigate('/booking', { state: { selectedPlace } });
     }
   }, [selectedPlace, navigate]);
 
