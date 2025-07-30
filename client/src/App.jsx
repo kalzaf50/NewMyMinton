@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Players from './pages/Players';
 import Booking from './pages/Booking';
+import Tournament from './pages/Tournament';
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/players" element={<Players />} />
+            <Route path="/tournaments" element={<Tournament />} /> 
             <Route path="/booking" element={<Booking />} /> 
-            <Route path="/booking/:area" element={<Booking />} />
           </Routes>
         </div>
         <footer style={{ padding: '1rem', textAlign: 'center', fontFamily: "'normal', sans-serif"}}>

@@ -9,14 +9,30 @@ import './Home.css';
 import { DropDownList } from '../components/DropDownList';
 
 /*Images*/
-import tourny1 from '../assets/images/tourny1.jpeg';
-import tourny2 from '../assets/images/tourny2.jpg';
-import tourny3 from '../assets/images/tourny3.jpg';
-import tourny4 from '../assets/images/tourny5.jpg';
+import defaultImage from '../assets/images/notfound.jpg';
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
   const [selectedPlace, setSelectedPlace] = useState(null);
+  const [tournaments, setTournaments] = useState([]);
   const navigate = useNavigate();
+
+  const fetchTournaments = async () => {
+    try {
+      setLoading(true);
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/tournaments`);
+      const data = await res.json();
+      setTournaments(data);
+    } catch (error) {
+      console.error('Failed to fetch tournaments:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchTournaments();
+  }, []);
 
   useEffect(() => {
     if (selectedPlace) {
@@ -45,29 +61,26 @@ const Home = () => {
     </div>
 
     <section className="scroll-wrapper">
-      <div className="scroll-container">
-        <div className="tournament">
-          <img src={tourny1} alt="Tournament 1" />
-          <p>Tournament 1: Date & Location</p>
+        <div className="scroll-container">
+          {loading ? (
+            <p>Loading tournaments...</p>
+          ) : tournaments.length === 0 ? (
+            <p>No tournaments available.</p>
+          ) : (
+            tournaments.map((tournament, index) => (
+              <div className="tournament" key={index}>
+                <img
+                  src={tournament.poster || defaultImage}
+                  alt={tournament.name}
+                  onError={(e) => (e.target.src = defaultImage)}
+                />
+                <p style={{ fontWeight: 'bolder' }}>{tournament.name.toUpperCase()}</p>
+                <p style={{ color: 'red' }}>{new Date(tournament.date).toLocaleDateString()}</p>
+              </div>
+            ))
+          )}
         </div>
-        <div className="tournament">
-          <img src={tourny2} alt="Tournament 2" />
-          <p>Tournament 2: Date & Location</p>
-        </div>
-        <div className="tournament">
-          <img src={tourny3} alt="Tournament 3" />
-          <p>Tournament 3: Date & Location</p>
-        </div>
-        <div className="tournament">
-          <img src={tourny4} alt="Tournament 4" />
-          <p>Tournament 4: Date & Location</p>
-        </div>
-        <div className="tournament">
-          <img src={tourny1} alt="Tournament 5" />
-          <p>Tournament 5: Date & Location</p>
-        </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };

@@ -127,8 +127,8 @@ const Players = () => {
                   <tr key={player._id}>
                     <td>{player.ranking}</td>
                     <td>{player.name?.toUpperCase()}</td>
-                    <td>{player.country}</td>
-                    <td>{player.events?.[0] || '-'}</td>
+                    <td>{player.country.toUpperCase()}</td>
+                    <td>{player.events?.[0].toUpperCase() || '-'}</td>
                     <td>{player.points?.toLocaleString()}</td>
                     <td>
                       <div className="button-container">
