@@ -3,6 +3,10 @@ const express = require('express');
 const router = express.Router();
 const Player = require('../models/PlayerModel');
 
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
+
 // GET all players
 router.get('/', async (req, res) => {
   try {
@@ -10,7 +14,7 @@ router.get('/', async (req, res) => {
     let players;
 
     if (name) {
-      players = await Player.find({ name: { $regex: name, $options: 'i' } }); // case-insensitive search
+      players = await Player.find({ name: { $regex: escapeRegex(name), $options: 'i' } }); // case-insensitive search
     } else {
       players = await Player.find();
     }

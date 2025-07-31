@@ -2,27 +2,20 @@ const express = require('express');
 const router = express.Router();
 const Tournament = require('../models/TournamentModel');
 
-// GET all tournaments (with optional name search)
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
+
+// GET all tournaments
 router.get('/', async (req, res) => {
   try {
     const { name } = req.query;
     const query = name
-      ? { name: { $regex: name, $options: 'i' } } // case-insensitive
+      ? { name: { $regex: escapeRegex(name), $options: 'i' } } // case-insensitive search
       : {};
 
     const tournaments = await Tournament.find(query).sort({ date: -1 });
     res.json(tournaments);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// GET tournament by ID
-router.get('/:id', async (req, res) => {
-  try {
-    const tournament = await Tournament.findById(req.params.id);
-    if (!tournament) return res.status(404).json({ message: 'Tournament not found' });
-    res.json(tournament);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
